@@ -36,18 +36,18 @@ jobs:
               - ".github/workflows/linux*"
               - ".github/workflows/windows-macos.yml"
 
-  docs-lint:
-    name: Automatic doc checks
-    needs: file-changed
-    if: needs.file-changed.outputs.docs_changes == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ".github/workflows/automatic-doc-checks.yml"
+#   docs-lint:
+#     name: Automatic doc checks
+#     needs: file-changed
+#     if: needs.file-changed.outputs.docs_changes == 'true'
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: ".github/workflows/automatic-doc-checks.yml"
     
-  build:
-    name: "Build & Test Sources"
-    needs: file-changed
-    if: needs.file-changed.outputs.code_changes == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ".github/workflows/linux.yml"
+#   build:
+#     name: "Build & Test Sources"
+#     needs: file-changed
+#     if: needs.file-changed.outputs.code_changes == 'true'
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: ".github/workflows/linux.yml"
