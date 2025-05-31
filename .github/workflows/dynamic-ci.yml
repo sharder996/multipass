@@ -45,7 +45,7 @@ jobs:
     if: needs.file-changed.outputs.docs_changes == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+    #   - uses: actions/checkout@v4
       - name: Build docs
         uses: ".github/workflows/automatic-doc-checks.yml"
     
