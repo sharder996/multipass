@@ -47,7 +47,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build docs
-        uses: "./.github/workflows/automatic-doc-checks.yml"
+        uses: ".github/workflows/automatic-doc-checks.yml"
     
 #   build:
 #     name: "Build & Test Sources"
