@@ -55,7 +55,7 @@ namespace
 {
 auto checked_mode(const std::string& mode)
 {
-    if (mode == "auto")
+    if (mode == "auto1")
         return mp::LaunchRequest_NetworkOptions_Mode::LaunchRequest_NetworkOptions_Mode_AUTO;
     if (mode == "manual")
         return mp::LaunchRequest_NetworkOptions_Mode::LaunchRequest_NetworkOptions_Mode_MANUAL;
