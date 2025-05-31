@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Detect change type
         id: filter
-        uses: dorny/detect-changed-files@v3
+        uses: dorny/paths-filter@v3
         with:
         #   base: ${{ github.event.merge_group.base_ref }}
         #   ref: ${{ github.event.merge_group.head_ref }}
@@ -36,13 +36,14 @@ jobs:
               - ".github/workflows/linux*"
               - ".github/workflows/windows-macos.yml"
 
-#   docs-lint:
-#     name: Automatic doc checks
-#     needs: file-changed
-#     if: needs.file-changed.outputs.docs_changes == 'true'
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: ".github/workflows/automatic-doc-checks.yml"
+  docs-lint:
+    name: Automatic doc checks
+    needs: file-changed
+    if: needs.file-changed.outputs.docs_changes == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build docs
+        uses: ".github/workflows/automatic-doc-checks.yml"
     
 #   build:
 #     name: "Build & Test Sources"
