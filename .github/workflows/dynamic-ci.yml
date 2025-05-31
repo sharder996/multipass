@@ -20,9 +20,6 @@ jobs:
       code_changes: ${{ steps.filter.outputs.code }}
       docs_changes: ${{ steps.filter.outputs.docs }}
     steps:
-    #   - name: Checkout code
-    #     uses: actions/checkout@v2
-    
       - name: Detect change type
         id: filter
         uses: dorny/detect-changed-files@v3
